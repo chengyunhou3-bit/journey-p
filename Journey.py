@@ -47,8 +47,8 @@ st.markdown(
     .name { font-size:2rem;font-weight:900;color:#f0dfbd;line-height:1.2; }
     .mood { color:#c7b389;font-size:1.05rem;margin-top:6px; }
     .character-stage { position:relative; margin-top:12px; height:clamp(270px,calc(100vh - 405px),420px); overflow:hidden; border:1px solid #443821;
-      background:#080b0d; box-shadow:inset 0 0 32px #000; }
-    .character-stage img { width:100%;height:100%;object-fit:cover;object-position:center 44%;image-rendering:pixelated;opacity:.96; }
+      background:radial-gradient(circle at 50% 58%,#17241d 0,#090d0e 66%,#050708 100%); box-shadow:inset 0 0 32px #000; padding:4px; }
+    .character-stage img { display:block;width:100%;height:100%;object-fit:contain;object-position:center;image-rendering:pixelated;opacity:.96; }
     .slot { position:absolute;width:66px;height:66px;display:grid;place-items:center;font-size:32px;background:#11120fe8;border:2px solid #746246;box-shadow:inset 0 0 0 3px #080907,0 3px 8px #000; }
     .s1{left:14px;top:18px}.s2{left:14px;top:100px}.s3{left:14px;top:182px}.s4{right:14px;top:18px}.s5{right:14px;top:100px}.s6{right:14px;top:182px}
     .xp-card { display:grid;grid-template-columns:105px 1fr;margin-top:16px;border:2px solid #76552e;background:#11120f; }
@@ -73,7 +73,7 @@ st.markdown(
 
 st.markdown('<div class="jp-shell"><div class="jp-inner"><div class="title-wrap"><div class="title">角色狀態</div></div>', unsafe_allow_html=True)
 
-left, right = st.columns([1.05, 1], gap="large")
+left, right = st.columns([0.92, 1.08], gap="large")
 with left:
     st.markdown(
         f"""
