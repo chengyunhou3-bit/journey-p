@@ -33,6 +33,7 @@ st.markdown(
     }
     .stApp:before { content:""; position:fixed; inset:0; pointer-events:none; opacity:.13;
       background-image:linear-gradient(rgba(255,255,255,.15) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.1) 1px,transparent 1px); background-size:4px 4px; }
+    .wood-menu{position:fixed;z-index:3;left:max(12px,calc(50vw - 590px));top:50%;transform:translateY(-50%);width:64px;padding:20px 8px 10px;display:flex;flex-direction:column;gap:9px;border:3px solid #3a210e;outline:2px solid #9b642b;border-radius:5px;background:repeating-linear-gradient(88deg,#6e3f1d 0,#7f4b23 7px,#5c3217 13px,#76431f 20px);box-shadow:inset 0 0 0 3px #b27738,inset 0 0 18px #241106,0 8px 22px #000}.wood-slot{width:42px;height:42px;border:2px solid #38200e;border-radius:3px;background:radial-gradient(circle at 45% 42%,#392313,#1b120c 72%);box-shadow:inset 0 0 0 2px #8b592b,inset 0 0 10px #000,0 2px 3px #2b1509}.wood-slot:after{content:"";display:block;width:18px;height:18px;margin:9px;border:1px solid #8d6537;transform:rotate(45deg);opacity:.45}
     header[data-testid="stHeader"], #MainMenu, footer { display:none; }
     .block-container { max-width:1060px; width:88vw; padding:.45rem .7rem .3rem; position:relative; z-index:1; }
     .jp-shell { border:4px solid #6f4b21; outline:2px solid #1a1108; padding:10px; border-radius:7px;
@@ -72,7 +73,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-st.markdown('<div class="jp-shell"><div class="jp-inner"><div class="title-wrap"><div class="title">角色狀態</div></div>', unsafe_allow_html=True)
+st.markdown('<aside class="wood-menu" aria-label="主要選單"><div class="wood-slot"></div><div class="wood-slot"></div><div class="wood-slot"></div><div class="wood-slot"></div><div class="wood-slot"></div></aside><div class="jp-shell"><div class="jp-inner"><div class="title-wrap"><div class="title">角色狀態</div></div>', unsafe_allow_html=True)
 
 left, right = st.columns([0.82, 1.18], gap="large")
 with left:
