@@ -33,9 +33,8 @@ st.markdown(
     }
     .stApp:before { content:""; position:fixed; inset:0; pointer-events:none; opacity:.13;
       background-image:linear-gradient(rgba(255,255,255,.15) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.1) 1px,transparent 1px); background-size:4px 4px; }
-    .stApp:after { content:""; position:fixed; inset:12px; pointer-events:none; border:2px solid #6e4b25; outline:1px solid #c39243; box-shadow:inset 0 0 0 5px #0b0a08,inset 0 0 0 7px #443018,0 0 24px #000; z-index:0; }
     header[data-testid="stHeader"], #MainMenu, footer { display:none; }
-    .block-container { max-width:1160px; width:92vw; padding:.65rem 1rem .4rem; position:relative; z-index:1; }
+    .block-container { max-width:1160px; width:96vw; padding:.45rem .8rem .3rem; position:relative; z-index:1; }
     .jp-shell { border:4px solid #6f4b21; outline:2px solid #1a1108; padding:10px; border-radius:7px;
       box-shadow:0 0 0 2px #d3a34e,0 0 0 7px #25180b,0 22px 65px #000; background:#0b0c0bd9; }
     .jp-inner { border:2px solid #76552e; padding:14px; background:linear-gradient(135deg,#191814f4,#0e100ff7); }
