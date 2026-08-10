@@ -15,6 +15,7 @@
     .inner{height:100%;border:2px solid #76552e;padding:12px;background:linear-gradient(135deg,#191814f4,#0e100ff7)}
     .title-wrap{position:relative;z-index:5;display:flex;justify-content:center;margin:0 0 9px}.title{min-width:360px;text-align:center;font-size:clamp(1.4rem,3vh,1.95rem);font-weight:900;letter-spacing:.22em;padding:6px 25px 9px;color:#f1e0b8;text-shadow:2px 3px #090704;border:3px solid #9d7131;outline:3px solid #15100a;background:linear-gradient(#243d6d,#16284b);box-shadow:inset 0 0 0 2px #cf9d42,0 7px 12px #000b}
     .grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:20px;height:calc(100% - 55px)}.profile{display:flex;gap:15px;align-items:center;padding-bottom:10px;border-bottom:2px dotted #5a492e}.portrait{width:60px;height:60px;border:3px solid #c8943d;box-shadow:0 0 0 3px #18130d;background:#243149;display:grid;place-items:center;font-size:29px}.name{font-size:1.7rem;font-weight:900;color:#f0dfbd;line-height:1.2}.mood{color:#c7b389;margin-top:4px;font-size:.92rem}
+    .name-row{display:flex;align-items:center;gap:8px;min-height:35px}.name{cursor:pointer}.name-edit{width:150px;max-width:100%;border:0;border-bottom:2px solid #c89a4b;outline:0;background:#0b0d0e;color:#f0dfbd;font:900 1.45rem/1.2 inherit;padding:1px 5px}.edit-name{width:28px;height:28px;padding:0;border:1px solid #69522f;background:#15140f;color:#d8b66d;cursor:pointer;font-size:.85rem}.edit-name:hover,.edit-name:focus-visible{border-color:#e4bc69;color:#fff0c2;outline:1px solid #e4bc69}.is-hidden{display:none}
     .stage{position:relative;margin-top:9px;height:clamp(250px,calc(100vh - 405px),355px);overflow:hidden;border:1px solid #443821;background:radial-gradient(circle at 50% 58%,#17241d 0,#090d0e 66%,#050708 100%);box-shadow:inset 0 0 32px #000;padding:4px}.stage img{display:block;width:100%;height:100%;object-fit:contain;object-position:center;image-rendering:pixelated;opacity:.96}.slot{position:absolute;width:48px;height:48px;display:grid;place-items:center;font-size:23px;background:#11120fe8;border:2px solid #746246;box-shadow:inset 0 0 0 3px #080907,0 3px 8px #000;transition:.18s}.slot:hover{transform:translateY(-2px);border-color:#e2b45d}.s1{left:9px;top:10px}.s2{left:9px;top:66px}.s3{left:9px;top:122px}.s4{right:9px;top:10px}.s5{right:9px;top:66px}.s6{right:9px;top:122px}
     .xp-card{display:grid;grid-template-columns:105px 1fr;margin-top:16px;border:2px solid #76552e;background:#11120f}.level{padding:13px;text-align:center;background:linear-gradient(#17305a,#101b34);border-right:2px solid #ba8437;font-weight:900;color:#f3ce6b}.level small{display:block}.level strong{font-size:2.2rem}.xp{padding:12px 16px}.xp-row{display:flex;justify-content:space-between;color:#ded0b3}.bar{height:14px;background:#090a09;border:2px solid #71634d;margin:7px 0 10px;box-shadow:inset 0 0 5px #000}.fill{height:100%;background:linear-gradient(#8fd45d,#397f32);width:52%}.tag{border:1px solid #52442e;padding:7px 12px;color:#e8d4a6}
     .section-title{display:flex;align-items:center;gap:13px;color:#d8bf8b;font-size:1.08rem;letter-spacing:.15em;margin:3px 0 9px}.section-title:before,.section-title:after{content:"";height:2px;flex:1;background:linear-gradient(90deg,transparent,#705d3a,transparent)}.vital{margin-bottom:9px;padding:9px 14px;border:2px solid #7b572e;background:#10100ef2;box-shadow:inset 0 0 0 2px #22170c}.vital-top{display:flex;align-items:center;gap:12px;font-size:1.22rem;font-weight:900}.num{margin-left:auto;font-variant-numeric:tabular-nums}.red{color:#ff6d76}.blue{color:#5da8ff}.yellow{color:#f9d44f}.meter{height:14px;margin-top:7px;background:#070909;border:2px solid #9a7138;border-radius:3px;padding:2px}.meter span{display:block;height:100%}.hp{width:60%;background:linear-gradient(#fa5262,#b31d35)}.mp{width:56%;background:linear-gradient(#3a9eff,#1764c4)}.sp{width:38%;background:linear-gradient(#ffe86a,#c29b23)}
@@ -26,7 +27,7 @@
 <body>
   <main class="shell"><div class="inner"><div class="title-wrap"><div class="title">角色狀態</div></div>
     <div class="grid">
-      <section><div class="profile"><div class="portrait">🧑🏻‍🦱</div><div><div class="name">亞 倫</div><div class="mood">有點累，但還是會繼續冒險。</div></div></div>
+      <section><div class="profile"><div class="portrait">🧑🏻‍🦱</div><div><div class="name-row"><div class="name" id="character-name" tabindex="0" title="點擊修改名字">亞 倫</div><input class="name-edit is-hidden" id="character-name-input" maxlength="12" aria-label="角色名字"><button class="edit-name" id="edit-name" type="button" aria-label="修改角色名字" title="修改名字">✎</button></div><div class="mood">有點累，但還是會繼續冒險。</div></div></div>
         <div class="stage"><img src="static/traveler.png" alt="披著深藍斗篷、手持長劍的像素風旅人"><span class="slot s1" title="武器">🗡️</span><span class="slot s2" title="守護">🛡️</span><span class="slot s3" title="專注披風">🧥</span><span class="slot s4" title="信念護符">🔮</span><span class="slot s5" title="習慣指環">💍</span><span class="slot s6" title="旅者靴">🥾</span></div>
         <div class="xp-card"><div class="level"><small>旅程等級</small><strong>18</strong></div><div class="xp"><div class="xp-row"><b>本週成長</b><span>2,360 / 4,500</span></div><div class="bar"><div class="fill"></div></div><div class="tag">★ 見習冒險者 · 穩定前進中</div></div></div>
       </section>
@@ -40,6 +41,24 @@
       </section>
     </div>
   </div></main><div class="footer">JOURNEY P · EVERY DAY IS PART OF THE ADVENTURE</div><div class="toast" role="status">此功能會在下一個版本開放 ✦</div>
-  <script>const t=document.querySelector('.toast');document.querySelectorAll('.btn').forEach(b=>b.addEventListener('click',()=>{t.classList.add('show');clearTimeout(window.jpt);window.jpt=setTimeout(()=>t.classList.remove('show'),1800)}));</script>
+  <script>
+    const toast=document.querySelector('.toast');
+    const nameLabel=document.querySelector('#character-name');
+    const nameInput=document.querySelector('#character-name-input');
+    const editNameButton=document.querySelector('#edit-name');
+    const nameStorageKey='journeyP.characterName';
+    const showToast=(message)=>{toast.textContent=message;toast.classList.add('show');clearTimeout(window.jpt);window.jpt=setTimeout(()=>toast.classList.remove('show'),1800)};
+    const readName=()=>{try{return localStorage.getItem(nameStorageKey)}catch{return null}};
+    const storedName=readName();
+    if(storedName) nameLabel.textContent=storedName;
+    const beginNameEdit=()=>{nameInput.value=nameLabel.textContent.trim();nameLabel.classList.add('is-hidden');nameInput.classList.remove('is-hidden');nameInput.focus();nameInput.select()};
+    const finishNameEdit=(save=true)=>{const next=nameInput.value.trim().slice(0,12);if(save&&next){nameLabel.textContent=next;try{localStorage.setItem(nameStorageKey,next)}catch{}showToast('角色名字已儲存 ✦')}nameInput.classList.add('is-hidden');nameLabel.classList.remove('is-hidden')};
+    editNameButton.addEventListener('click',beginNameEdit);
+    nameLabel.addEventListener('click',beginNameEdit);
+    nameLabel.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();beginNameEdit()}});
+    nameInput.addEventListener('keydown',event=>{if(event.key==='Enter')finishNameEdit(true);if(event.key==='Escape')finishNameEdit(false)});
+    nameInput.addEventListener('blur',()=>finishNameEdit(true));
+    document.querySelectorAll('.btn').forEach(button=>button.addEventListener('click',()=>showToast('此功能會在下一個版本開放 ✦')));
+  </script>
 </body>
 </html>
