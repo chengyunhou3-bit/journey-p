@@ -33,12 +33,13 @@ st.markdown(
     }
     .stApp:before { content:""; position:fixed; inset:0; pointer-events:none; opacity:.13;
       background-image:linear-gradient(rgba(255,255,255,.15) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.1) 1px,transparent 1px); background-size:4px 4px; }
+    .stApp:after { content:""; position:fixed; inset:12px; pointer-events:none; border:2px solid #6e4b25; outline:1px solid #c39243; box-shadow:inset 0 0 0 5px #0b0a08,inset 0 0 0 7px #443018,0 0 24px #000; z-index:0; }
     header[data-testid="stHeader"], #MainMenu, footer { display:none; }
-    .block-container { max-width:1280px; padding:.8rem 1rem .5rem; }
+    .block-container { max-width:1160px; width:92vw; padding:.65rem 1rem .4rem; position:relative; z-index:1; }
     .jp-shell { border:4px solid #6f4b21; outline:2px solid #1a1108; padding:10px; border-radius:7px;
       box-shadow:0 0 0 2px #d3a34e,0 0 0 7px #25180b,0 22px 65px #000; background:#0b0c0bd9; }
     .jp-inner { border:2px solid #76552e; padding:14px; background:linear-gradient(135deg,#191814f4,#0e100ff7); }
-    .title-wrap { display:flex; justify-content:center; margin:0 0 10px; }
+    .title-wrap { position:relative; z-index:5; display:flex; justify-content:center; margin:0 0 9px; }
     .title { min-width:420px; text-align:center; font-size:2.35rem; font-weight:900; letter-spacing:.22em; padding:10px 32px 14px;
       color:#f1e0b8; text-shadow:2px 3px #090704; border:3px solid #9d7131; outline:3px solid #15100a;
       background:linear-gradient(#243d6d,#16284b); box-shadow:inset 0 0 0 2px #cf9d42,0 7px 12px #000b; }
@@ -46,7 +47,7 @@ st.markdown(
     .portrait { width:70px;height:70px;border:3px solid #c8943d;box-shadow:0 0 0 4px #18130d;background:#243149;display:grid;place-items:center;font-size:34px; }
     .name { font-size:2rem;font-weight:900;color:#f0dfbd;line-height:1.2; }
     .mood { color:#c7b389;font-size:1.05rem;margin-top:6px; }
-    .character-stage { position:relative; margin-top:12px; height:clamp(270px,calc(100vh - 405px),420px); overflow:hidden; border:1px solid #443821;
+    .character-stage { position:relative; margin-top:10px; height:clamp(235px,calc(100vh - 430px),365px); overflow:hidden; border:1px solid #443821;
       background:radial-gradient(circle at 50% 58%,#17241d 0,#090d0e 66%,#050708 100%); box-shadow:inset 0 0 32px #000; padding:4px; }
     .character-stage img { display:block;width:100%;height:100%;object-fit:contain;object-position:center;image-rendering:pixelated;opacity:.96; }
     .slot { position:absolute;width:66px;height:66px;display:grid;place-items:center;font-size:32px;background:#11120fe8;border:2px solid #746246;box-shadow:inset 0 0 0 3px #080907,0 3px 8px #000; }
