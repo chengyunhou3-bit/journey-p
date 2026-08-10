@@ -46,7 +46,7 @@ st.markdown(
     .portrait { width:70px;height:70px;border:3px solid #c8943d;box-shadow:0 0 0 4px #18130d;background:#243149;display:grid;place-items:center;font-size:34px; }
     .name { font-size:2rem;font-weight:900;color:#f0dfbd;line-height:1.2; }
     .mood { color:#c7b389;font-size:1.05rem;margin-top:6px; }
-    .character-stage { position:relative; margin-top:9px; height:clamp(220px,calc(100vh - 435px),325px); overflow:hidden; border:1px solid #443821;
+    .character-stage { position:relative; margin-top:9px; height:clamp(250px,calc(100vh - 405px),355px); overflow:hidden; border:1px solid #443821;
       background:radial-gradient(circle at 50% 58%,#17241d 0,#090d0e 66%,#050708 100%); box-shadow:inset 0 0 32px #000; padding:4px; }
     .character-stage img { display:block;width:100%;height:100%;object-fit:contain;object-position:center;image-rendering:pixelated;opacity:.96; }
     .slot { position:absolute;width:66px;height:66px;display:grid;place-items:center;font-size:32px;background:#11120fe8;border:2px solid #746246;box-shadow:inset 0 0 0 3px #080907,0 3px 8px #000; }
@@ -65,7 +65,7 @@ st.markdown(
     .footer-note{text-align:center;color:#8f8066;margin:7px 0 0;font-size:.75rem;letter-spacing:.08em}
     div[data-testid="stButton"] button { border:2px solid #8e6935;background:linear-gradient(#252017,#11120f);color:#ead8b2;border-radius:2px;font-family:inherit;font-weight:700;box-shadow:inset 0 0 0 2px #0a0907; }
     div[data-testid="stButton"] button:hover{border-color:#ddb465;color:#fff1c9}
-    div[data-testid="column"]{min-width:0}.section-title{font-size:.94rem;margin:2px 0 6px}.vital{margin-bottom:6px;padding:6px 11px}.vital-top{gap:8px;font-size:1.05rem}.meter{height:12px;margin-top:5px}.stat{padding:5px 10px;font-size:.88rem}.quest{margin-top:7px;padding:7px 10px;font-size:.86rem}.quest p{margin-top:2px}.quest-progress{margin-top:4px;height:5px}.footer-note{margin-top:5px}div[data-testid="stButton"] button{padding:6px;font-size:.86rem}
+    div[data-testid="column"]{min-width:0}.section-title{font-size:.92rem;margin:1px 0 4px}.vital{margin-bottom:4px;padding:5px 10px}.vital-top{gap:7px;font-size:1rem}.meter{height:11px;margin-top:4px}.stat{padding:4px 9px;font-size:.86rem}.quest{margin-top:5px;padding:6px 9px;font-size:.84rem}.quest p{margin-top:1px}.quest-progress{margin-top:3px;height:4px}.footer-note{margin-top:4px}div[data-testid="stButton"] button{padding:5px;font-size:.84rem}
     @media(max-width:820px){.title{min-width:0;width:82%;font-size:1.55rem}.character-stage{height:420px}.stats{grid-template-columns:1fr}.stat:nth-child(odd){border-right:0}.jp-inner{padding:12px}.block-container{padding-top:2rem}}
     </style>
     """,
@@ -74,7 +74,7 @@ st.markdown(
 
 st.markdown('<div class="jp-shell"><div class="jp-inner"><div class="title-wrap"><div class="title">角色狀態</div></div>', unsafe_allow_html=True)
 
-left, right = st.columns([0.92, 1.08], gap="large")
+left, right = st.columns([0.82, 1.18], gap="large")
 with left:
     st.markdown(
         f"""
