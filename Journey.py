@@ -20,7 +20,7 @@ traveler = image_data(APP_DIR / "static" / "traveler.png")
 st.markdown(
     """
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&family=Press+Start+2P&display=swap');
     :root { --gold:#c89a4b; --pale:#ead9b5; --ink:#0a0b0c; --panel:#171713; }
     * { box-sizing:border-box; }
     html, body, [class*="css"] { font-family:'Noto Serif TC','Microsoft JhengHei',serif; }
@@ -33,7 +33,7 @@ st.markdown(
     }
     .stApp:before { content:""; position:fixed; inset:0; pointer-events:none; opacity:.13;
       background-image:linear-gradient(rgba(255,255,255,.15) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.1) 1px,transparent 1px); background-size:4px 4px; }
-    .wood-menu{position:fixed;z-index:3;left:max(12px,calc(50vw - 595px));top:50%;transform:translateY(-50%);width:116px;padding:20px 8px 10px;display:flex;flex-direction:column;gap:9px;border:3px solid #3a210e;outline:2px solid #9b642b;border-radius:5px;background:repeating-linear-gradient(88deg,#6e3f1d 0,#7f4b23 7px,#5c3217 13px,#76431f 20px);box-shadow:inset 0 0 0 3px #b27738,inset 0 0 18px #241106,0 8px 22px #000}.wood-slot{position:relative;width:94px;height:42px;padding:0 5px 0 14px;display:grid;place-items:center;border:2px solid #38200e;border-radius:3px;background:radial-gradient(circle at 45% 42%,#392313,#1b120c 72%);box-shadow:inset 0 0 0 2px #8b592b,inset 0 0 10px #000,0 2px 3px #2b1509;color:#e2c591;font-size:.76rem;font-weight:700;letter-spacing:.04em;text-shadow:1px 2px #000;white-space:nowrap}.wood-slot:after{content:"";position:absolute;left:7px;top:50%;width:5px;height:5px;border:1px solid #b68446;transform:translateY(-50%) rotate(45deg);opacity:.8}
+    .wood-menu{position:fixed;z-index:3;left:max(12px,calc(50vw - 601px));top:50%;transform:translateY(-50%);width:128px;padding:20px 8px 10px;display:flex;flex-direction:column;gap:9px;border:3px solid #3a210e;outline:2px solid #9b642b;border-radius:5px;background:repeating-linear-gradient(88deg,#6e3f1d 0,#7f4b23 7px,#5c3217 13px,#76431f 20px);box-shadow:inset 0 0 0 3px #b27738,inset 0 0 18px #241106,0 8px 22px #000}.wood-slot{position:relative;width:106px;height:42px;padding:0 5px 0 14px;display:grid;place-items:center;border:2px solid #38200e;border-radius:3px;background:radial-gradient(circle at 45% 42%,#392313,#1b120c 72%);box-shadow:inset 0 0 0 2px #8b592b,inset 0 0 10px #000,0 2px 3px #2b1509;color:#e8cc94;font-family:'Press Start 2P','Noto Serif TC',serif;font-size:.66rem;font-weight:700;line-height:1.35;letter-spacing:.02em;text-shadow:1px 2px #000,0 0 5px #8b5c27;white-space:nowrap}.wood-slot:after{content:"";position:absolute;left:7px;top:50%;width:5px;height:5px;border:1px solid #b68446;transform:translateY(-50%) rotate(45deg);opacity:.8}
     header[data-testid="stHeader"], #MainMenu, footer { display:none; }
     .block-container { max-width:890px; width:74vw; padding:.45rem .7rem .3rem; position:relative; z-index:1; }
     .jp-shell { border:4px solid #6f4b21; outline:2px solid #1a1108; padding:10px; border-radius:7px;
@@ -73,7 +73,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-st.markdown('<aside class="wood-menu" aria-label="主要選單"><div class="wood-slot">QUEST</div><div class="wood-slot">SKILLS</div><div class="wood-slot">信仰 &amp; 真實</div><div class="wood-slot">角色日誌</div></aside><div class="jp-shell"><div class="jp-inner"><div class="title-wrap"><div class="title">角色狀態</div></div>', unsafe_allow_html=True)
+st.markdown('<aside class="wood-menu" aria-label="主要選單"><div class="wood-slot">QUEST</div><div class="wood-slot">SKILLS</div><div class="wood-slot">信仰 &amp; 真實</div><div class="wood-slot">角色日誌</div><div class="wood-slot">查看信箱</div></aside><div class="jp-shell"><div class="jp-inner"><div class="title-wrap"><div class="title">角色狀態</div></div>', unsafe_allow_html=True)
 
 left, right = st.columns([1, 0.95], gap="large")
 with left:
