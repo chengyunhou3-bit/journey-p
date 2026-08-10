@@ -38,7 +38,7 @@ st.markdown(
     .jp-shell { border:4px solid #6f4b21; outline:2px solid #1a1108; padding:10px; border-radius:7px;
       box-shadow:0 0 0 2px #d3a34e,0 0 0 7px #25180b,0 22px 65px #000; background:#0b0c0bd9; }
     .jp-inner { border:2px solid #76552e; padding:14px; background:linear-gradient(135deg,#191814f4,#0e100ff7); }
-    .title-wrap { display:flex; justify-content:center; margin:-38px 0 12px; }
+    .title-wrap { display:flex; justify-content:center; margin:0 0 10px; }
     .title { min-width:420px; text-align:center; font-size:2.35rem; font-weight:900; letter-spacing:.22em; padding:10px 32px 14px;
       color:#f1e0b8; text-shadow:2px 3px #090704; border:3px solid #9d7131; outline:3px solid #15100a;
       background:linear-gradient(#243d6d,#16284b); box-shadow:inset 0 0 0 2px #cf9d42,0 7px 12px #000b; }
