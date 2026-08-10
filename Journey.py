@@ -49,11 +49,16 @@ st.markdown(
     .portrait { width:70px;height:70px;border:3px solid #c8943d;box-shadow:0 0 0 4px #18130d;background:#243149;display:grid;place-items:center;font-size:34px; }
     .name { font-size:2rem;font-weight:900;color:#f0dfbd;line-height:1.2; }
     .mood { color:#c7b389;font-size:1.05rem;margin-top:6px; }
-    .character-stage { position:relative; margin-top:9px; height:clamp(250px,calc(100vh - 405px),355px); overflow:hidden; border:1px solid #443821;
-      background:radial-gradient(circle at 50% 58%,#17241d 0,#090d0e 66%,#050708 100%); box-shadow:inset 0 0 32px #000; padding:4px; }
-    .character-stage img { display:block;width:100%;height:100%;object-fit:contain;object-position:center;image-rendering:pixelated;opacity:.96; }
-    .slot { position:absolute;width:66px;height:66px;display:grid;place-items:center;font-size:32px;background:#11120fe8;border:2px solid #746246;box-shadow:inset 0 0 0 3px #080907,0 3px 8px #000; }
-    .s1{left:14px;top:18px}.s2{left:14px;top:100px}.s3{left:14px;top:182px}.s4{right:14px;top:18px}.s5{right:14px;top:100px}.s6{right:14px;top:182px}
+    .character-build { display:grid;grid-template-columns:minmax(145px,.82fr) minmax(0,1.18fr);gap:10px;margin-top:9px;height:clamp(250px,calc(100vh - 405px),355px); }
+    .character-stage { position:relative;height:100%;overflow:hidden;border:1px solid #443821;background:radial-gradient(circle at 50% 58%,#17241d 0,#090d0e 66%,#050708 100%);box-shadow:inset 0 0 32px #000;padding:4px; }
+    .character-stage img { display:block;width:100%;height:100%;object-fit:cover;object-position:center;image-rendering:pixelated;opacity:.96; }
+    .build-card { min-width:0;padding:11px 10px;border:2px solid #6f542f;background:linear-gradient(155deg,#171710,#0d1010);box-shadow:inset 0 0 0 2px #241a0d;overflow:hidden; }
+    .build-label { color:#a99269;font-size:.72rem;letter-spacing:.18em; }
+    .class-name { margin:3px 0 4px;color:#f0cf79;font-size:1.2rem;font-weight:900;text-shadow:1px 2px #000; }
+    .class-desc { color:#b9aa8d;font-size:.76rem;line-height:1.45;padding-bottom:8px;border-bottom:1px dotted #55462f; }
+    .talent-title { margin:8px 0 5px;color:#d8bf8b;font-size:.78rem;letter-spacing:.14em; }
+    .talent { margin-top:5px;padding:6px 7px;border:1px solid #4f442f;background:#10120f;color:#d9c8a7;font-size:.72rem;line-height:1.35; }
+    .talent b { display:block;color:#e9d08f;font-size:.76rem; }
     .xp-card { display:grid;grid-template-columns:105px 1fr;margin-top:16px;border:2px solid #76552e;background:#11120f; }
     .level { padding:13px;text-align:center;background:linear-gradient(#17305a,#101b34);border-right:2px solid #ba8437;font-weight:900;color:#f3ce6b; }
     .level small{display:block}.level strong{font-size:2.2rem}.xp{padding:12px 16px}.xp-row{display:flex;justify-content:space-between;color:#ded0b3}.bar{height:14px;background:#090a09;border:2px solid #71634d;margin:7px 0 10px;box-shadow:inset 0 0 5px #000}.fill{height:100%;background:linear-gradient(#8fd45d,#397f32);}
@@ -83,10 +88,16 @@ with left:
     st.markdown(
         f"""
         <div class="profile"><div class="portrait">🧑🏻‍🦱</div><div><div class="name">亞 倫</div><div class="mood">有點累，但還是會繼續冒險。</div></div></div>
-        <div class="character-stage">
-          <img src="data:image/png;base64,{traveler}" alt="披著深藍斗篷、手持長劍的像素風旅人">
-          <div class="slot s1" title="武器">🗡️</div><div class="slot s2" title="守護">🛡️</div><div class="slot s3" title="專注披風">🧥</div>
-          <div class="slot s4" title="信念護符">🔮</div><div class="slot s5" title="習慣指環">💍</div><div class="slot s6" title="旅者靴">🥾</div>
+        <div class="character-build">
+          <div class="character-stage"><img src="data:image/png;base64,{traveler}" alt="披著深藍斗篷、手持長劍的像素風旅人"></div>
+          <aside class="build-card" aria-label="職業與天賦">
+            <div class="build-label">職業 CLASS</div><div class="class-name">星途遊俠</div>
+            <div class="class-desc">在日常與未知之間開路，以行動累積方向。</div>
+            <div class="talent-title">天賦 TALENTS</div>
+            <div class="talent"><b>✦ 不熄之火</b>完成今日主線，心力 +10。</div>
+            <div class="talent"><b>✦ 專注連擊</b>連續專注 3 日，經驗 +20%。</div>
+            <div class="talent"><b>✦ 拾光者</b>記錄角色日誌，恢復 5 點體力。</div>
+          </aside>
         </div>
         <div class="xp-card"><div class="level"><small>旅程等級</small><strong>18</strong></div><div class="xp"><div class="xp-row"><b>本週成長</b><span>2,360 / 4,500</span></div><div class="bar"><div class="fill" style="width:52%"></div></div><div class="title-tag">★ 見習冒險者 · 穩定前進中</div></div></div>
         """,
