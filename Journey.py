@@ -75,6 +75,19 @@ st.markdown(
     div[data-testid="stButton"] button:hover{border-color:#ddb465;color:#fff1c9}
     div[data-testid="column"]{min-width:0}.section-title{font-size:.94rem;margin:1px 0 5px}.vital{margin-bottom:5px;padding:6px 10px}.vital-top{gap:7px;font-size:1.02rem}.meter{height:12px;margin-top:5px}.stat{padding:5px 9px;font-size:.87rem}.quest{margin-top:6px;padding:7px 9px;font-size:.85rem}.quest p{margin-top:2px}.quest-progress{margin-top:4px;height:5px}.footer-note{position:fixed;left:0;right:0;bottom:9px;margin:0;z-index:2;pointer-events:none}div[data-testid="stButton"] button{padding:6px;font-size:.85rem}
     @media(max-width:820px){.title{min-width:0;width:82%;font-size:1.55rem}.character-stage{height:420px}.stats{grid-template-columns:1fr}.stat:nth-child(odd){border-right:0}.jp-inner{padding:12px}.block-container{padding-top:2rem}}
+
+    /* RPG character-sheet theme */
+    .stApp{background:radial-gradient(circle at 35% 20%,#35402d,#141711 68%);color:#242015}
+    .block-container{max-width:1180px;width:94vw;padding:.6rem}
+    .jp-shell{border:5px solid #493019;outline:3px solid #7c8c47;padding:8px;border-radius:3px;background:#d8c39b}
+    .jp-inner{padding:12px;border:3px solid #927044;background:linear-gradient(90deg,#1c2b20 0 51%,#ddc9a3 51%)}
+    .title-wrap{height:68px;margin:0 0 10px;justify-content:flex-start;background:linear-gradient(90deg,#173a28 0 51%,#d7c29c 51%);border-bottom:4px solid #563c20}
+    .title{width:48%;min-width:0;display:grid;place-items:center;font-size:2rem;padding:8px;color:#f0e3c7;background:linear-gradient(#294b2f,#173421);border-color:#8c7542}
+    .clock-panel{right:24%;top:50%;transform:translate(50%,-50%);width:170px;height:48px;background:#d5c29e;border-color:#715532;outline-color:#40301d}.clock-time{color:#282117;text-shadow:none}
+    .profile{padding:8px 10px;border:2px solid #6f7545;background:#1d3124}.name{color:#f3e5c4}.mood{color:#c6b894}
+    .character-build{display:block;height:clamp(280px,calc(100vh - 410px),390px)}.character-stage{height:100%;border:3px solid #76613e;background:radial-gradient(circle at 50% 48%,#536646,#18231c 72%);padding:0}.character-stage img{object-fit:contain}
+    .build-card{padding:10px 13px;border:2px solid #795d35;background:#ead8b5;box-shadow:inset 0 0 0 2px #c0a77d;color:#211d16}.build-label,.talent-title{color:#476234}.class-name{color:#161812;text-shadow:none}.class-desc{color:#5d503d;border-color:#a58c66}.talent{display:inline-block;width:32%;vertical-align:top;margin:6px .4% 0;padding:6px;background:#d6c19b;border-color:#a88d62;color:#3d3428}.talent b{color:#244a2e}
+    .vital{background:#d8c39e;border-color:#96784f;color:#2a241a}.section-title{color:#284c2f}.stats{background:#d6c09a;border-color:#92764e}.stat b,.stat span:last-child{color:#30291e}.quest{background:#ccb48d;border-color:#80643f}.quest-head{color:#24492d}.quest p{color:#594b38}
     </style>
     """,
     unsafe_allow_html=True,
@@ -90,14 +103,6 @@ with left:
         <div class="profile"><div class="portrait">🧑🏻‍🦱</div><div><div class="name">亞 倫</div><div class="mood">有點累，但還是會繼續冒險。</div></div></div>
         <div class="character-build">
           <div class="character-stage"><img src="data:image/png;base64,{traveler}" alt="披著深藍斗篷、手持長劍的像素風旅人"></div>
-          <aside class="build-card" aria-label="職業與天賦">
-            <div class="build-label">職業 CLASS</div><div class="class-name">星途遊俠</div>
-            <div class="class-desc">在日常與未知之間開路，以行動累積方向。</div>
-            <div class="talent-title">天賦 TALENTS</div>
-            <div class="talent"><b>✦ 不熄之火</b>完成今日主線，心力 +10。</div>
-            <div class="talent"><b>✦ 專注連擊</b>連續專注 3 日，經驗 +20%。</div>
-            <div class="talent"><b>✦ 拾光者</b>記錄角色日誌，恢復 5 點體力。</div>
-          </aside>
         </div>
         <div class="xp-card"><div class="level"><small>旅程等級</small><strong>18</strong></div><div class="xp"><div class="xp-row"><b>本週成長</b><span>2,360 / 4,500</span></div><div class="bar"><div class="fill" style="width:52%"></div></div><div class="title-tag">★ 見習冒險者 · 穩定前進中</div></div></div>
         """,
@@ -107,6 +112,7 @@ with left:
 with right:
     st.markdown(
         """
+        <aside class="build-card" aria-label="職業與天賦"><div class="build-label">職業 CLASS</div><div class="class-name">星途遊俠 · Lv.18</div><div class="class-desc">在日常與未知之間開路，以行動累積方向。</div><div class="talent-title">天賦 TALENTS</div><div class="talent"><b>✦ 不熄之火</b>完成今日主線，心力 +10。</div><div class="talent"><b>✦ 專注連擊</b>連續專注 3 日，經驗 +20%。</div><div class="talent"><b>✦ 拾光者</b>記錄角色日誌，恢復 5 點體力。</div></aside>
         <div class="section-title">✦ 今日能量 ✦</div>
         <div class="vital"><div class="vital-top"><span class="icon">❤️</span><span>體力</span><span class="num red">72 / 120</span></div><div class="meter"><span class="hp" style="width:60%"></span></div></div>
         <div class="vital"><div class="vital-top"><span class="icon">💧</span><span>專注</span><span class="num blue">56 / 100</span></div><div class="meter"><span class="mp" style="width:56%"></span></div></div>
