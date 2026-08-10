@@ -26,6 +26,28 @@
     @media(max-width:1180px) and (min-width:1001px){.shell{width:min(870px,calc(100vw - 290px))}.wood-menu{left:16px}}
     @media(max-width:1000px) and (min-width:821px){.wood-menu{display:none}.shell{width:calc(100vw - 80px)}}
     @media(max-width:820px){body{height:auto;min-height:100vh;overflow:auto;padding:32px 10px}.wood-menu{display:none}.shell{height:auto}.title{min-width:0;width:82%;font-size:1.55rem}.grid{grid-template-columns:1fr}.stage{height:420px}.inner{padding:12px}.stats{grid-template-columns:1fr}.stat:nth-child(odd){border-right:0}.right{padding-top:8px}}
+
+    /* RPG character-sheet theme */
+    body{padding:18px;background:radial-gradient(circle at 35% 20%,#35402d,#141711 68%);color:#242015}
+    .shell{width:min(1180px,calc(100vw - 36px));height:min(760px,calc(100vh - 36px));border:5px solid #493019;outline:3px solid #7c8c47;padding:8px;border-radius:3px;box-shadow:0 0 0 4px #1c2317,0 20px 70px #000}
+    .inner{padding:0;border:3px solid #927044;background:#d8c39b}
+    .title-wrap{height:72px;justify-content:flex-start;margin:0;background:linear-gradient(90deg,#173a28 0 48%,#cdb68e 48%);border-bottom:4px solid #563c20}
+    .title{width:46%;min-width:0;display:grid;place-items:center;font-size:2rem;padding:8px 22px;color:#f0e3c7;border:2px solid #8c7542;outline:2px solid #1b291a;background:linear-gradient(#294b2f,#173421);box-shadow:inset 0 0 0 2px #789054;text-shadow:2px 3px #111}
+    .clock-panel{right:27%;top:50%;transform:translate(50%,-50%);width:170px;height:48px;background:#d5c29e;border-color:#715532;outline-color:#40301d;color:#211d15}
+    .clock-time{color:#282117;text-shadow:none}
+    .grid{grid-template-columns:1.08fr .92fr;gap:0;height:calc(100% - 72px)}
+    .grid>section:first-child{padding:16px;background:linear-gradient(#263728,#111b16);border-right:5px solid #5d4327;color:#eadbbd}
+    .right{padding:16px 20px;background:linear-gradient(100deg,#e4d2ad,#cdb488);color:#211d16;overflow:hidden}
+    .profile{padding:8px 10px;border:2px solid #6f7545;background:#1d3124}.name{color:#f3e5c4}.mood{color:#c6b894}
+    .character-build{display:block;height:calc(100% - 166px);margin-top:10px}.stage{height:100%;border:3px solid #76613e;background:radial-gradient(circle at 50% 48%,#536646,#18231c 72%);padding:0}.stage img{object-fit:contain}
+    .xp-card{margin-top:10px;border-color:#78613a}.level{background:linear-gradient(#31533a,#1c3525)}
+    .build-card{padding:10px 13px;border:2px solid #795d35;background:#ead8b5;box-shadow:inset 0 0 0 2px #c0a77d;color:#211d16}
+    .build-label,.talent-title{color:#476234}.class-name{color:#161812;text-shadow:none}.class-desc{color:#5d503d;border-color:#a58c66}
+    .talent{display:inline-block;width:32%;vertical-align:top;margin:6px .4% 0;padding:6px;background:#d6c19b;border-color:#a88d62;color:#3d3428}.talent b{color:#244a2e}
+    .right .section-title{color:#284c2f;margin:8px 0 5px}.right .vital{background:#d8c39e;border-color:#96784f;box-shadow:inset 0 0 0 2px #c3aa80}.right .vital-top{color:#2a241a}
+    .right .stats{background:#d6c09a;border-color:#92764e}.right .stat{border-color:#a78f69}.right .stat b,.right .stat span{color:#30291e}
+    .right .quest{background:#ccb48d;border-color:#80643f}.right .quest-head{color:#24492d}.right .quest p{color:#594b38}
+    .right .btn{background:linear-gradient(#31543a,#1b3525);border-color:#8f7b46;color:#f1dfba}
   </style>
 </head>
 <body>
@@ -33,10 +55,10 @@
   <main class="shell"><div class="inner"><div class="title-wrap"><div class="clock-panel" aria-label="目前時間，24 小時制"><span class="clock-time" id="digital-clock">00:00:00</span></div><div class="title">角色狀態</div></div>
     <div class="grid">
       <section><div class="profile"><div class="portrait">🧑🏻‍🦱</div><div><div class="name-row"><div class="name" id="character-name" tabindex="0" title="點擊修改名字">亞 倫</div><input class="name-edit is-hidden" id="character-name-input" maxlength="12" aria-label="角色名字"><button class="edit-name" id="edit-name" type="button" aria-label="修改角色名字" title="修改名字">✎</button></div><div class="mood">有點累，但還是會繼續冒險。</div></div></div>
-        <div class="character-build"><div class="stage"><img src="static/traveler.png" alt="披著深藍斗篷、手持長劍的像素風旅人"></div><aside class="build-card" aria-label="職業與天賦"><div class="build-label">職業 CLASS</div><div class="class-name">星途遊俠</div><div class="class-desc">在日常與未知之間開路，以行動累積方向。</div><div class="talent-title">天賦 TALENTS</div><div class="talent"><b>✦ 不熄之火</b>完成今日主線，心力 +10。</div><div class="talent"><b>✦ 專注連擊</b>連續專注 3 日，經驗 +20%。</div><div class="talent"><b>✦ 拾光者</b>記錄角色日誌，恢復 5 點體力。</div></aside></div>
+        <div class="character-build"><div class="stage"><img src="static/traveler.png" alt="披著深藍斗篷、手持長劍的像素風旅人"></div></div>
         <div class="xp-card"><div class="level"><small>旅程等級</small><strong>18</strong></div><div class="xp"><div class="xp-row"><b>本週成長</b><span>2,360 / 4,500</span></div><div class="bar"><div class="fill"></div></div><div class="tag">★ 見習冒險者 · 穩定前進中</div></div></div>
       </section>
-      <section class="right"><div class="section-title">✦ 今日能量 ✦</div>
+      <section class="right"><aside class="build-card" aria-label="職業與天賦"><div class="build-label">職業 CLASS</div><div class="class-name">星途遊俠 · Lv.18</div><div class="class-desc">在日常與未知之間開路，以行動累積方向。</div><div class="talent-title">天賦 TALENTS</div><div class="talent"><b>✦ 不熄之火</b>完成今日主線，心力 +10。</div><div class="talent"><b>✦ 專注連擊</b>連續專注 3 日，經驗 +20%。</div><div class="talent"><b>✦ 拾光者</b>記錄角色日誌，恢復 5 點體力。</div></aside><div class="section-title">✦ 今日能量 ✦</div>
         <div class="vital"><div class="vital-top"><span>❤️</span><span>體力</span><span class="num red">72 / 120</span></div><div class="meter"><span class="hp"></span></div></div>
         <div class="vital"><div class="vital-top"><span>💧</span><span>專注</span><span class="num blue">56 / 100</span></div><div class="meter"><span class="mp"></span></div></div>
         <div class="vital"><div class="vital-top"><span>⚡</span><span>心力</span><span class="num yellow">38 / 100</span></div><div class="meter"><span class="sp"></span></div></div>
