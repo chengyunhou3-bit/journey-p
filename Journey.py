@@ -65,6 +65,7 @@ st.markdown(
     .footer-note{text-align:center;color:#8f8066;margin:7px 0 0;font-size:.75rem;letter-spacing:.08em}
     div[data-testid="stButton"] button { border:2px solid #8e6935;background:linear-gradient(#252017,#11120f);color:#ead8b2;border-radius:2px;font-family:inherit;font-weight:700;box-shadow:inset 0 0 0 2px #0a0907; }
     div[data-testid="stButton"] button:hover{border-color:#ddb465;color:#fff1c9}
+    div[data-testid="column"]{min-width:0}.section-title{font-size:.94rem;margin:2px 0 6px}.vital{margin-bottom:6px;padding:6px 11px}.vital-top{gap:8px;font-size:1.05rem}.meter{height:12px;margin-top:5px}.stat{padding:5px 10px;font-size:.88rem}.quest{margin-top:7px;padding:7px 10px;font-size:.86rem}.quest p{margin-top:2px}.quest-progress{margin-top:4px;height:5px}.footer-note{margin-top:5px}div[data-testid="stButton"] button{padding:6px;font-size:.86rem}
     @media(max-width:820px){.title{min-width:0;width:82%;font-size:1.55rem}.character-stage{height:420px}.stats{grid-template-columns:1fr}.stat:nth-child(odd){border-right:0}.jp-inner{padding:12px}.block-container{padding-top:2rem}}
     </style>
     """,
