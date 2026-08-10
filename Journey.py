@@ -65,7 +65,7 @@ st.markdown(
     .footer-note{text-align:center;color:#8f8066;margin:7px 0 0;font-size:.75rem;letter-spacing:.08em}
     div[data-testid="stButton"] button { border:2px solid #8e6935;background:linear-gradient(#252017,#11120f);color:#ead8b2;border-radius:2px;font-family:inherit;font-weight:700;box-shadow:inset 0 0 0 2px #0a0907; }
     div[data-testid="stButton"] button:hover{border-color:#ddb465;color:#fff1c9}
-    div[data-testid="column"]{min-width:0}.section-title{font-size:.92rem;margin:1px 0 4px}.vital{margin-bottom:4px;padding:5px 10px}.vital-top{gap:7px;font-size:1rem}.meter{height:11px;margin-top:4px}.stat{padding:4px 9px;font-size:.86rem}.quest{margin-top:5px;padding:6px 9px;font-size:.84rem}.quest p{margin-top:1px}.quest-progress{margin-top:3px;height:4px}.footer-note{margin-top:4px}div[data-testid="stButton"] button{padding:5px;font-size:.84rem}
+    div[data-testid="column"]{min-width:0}.section-title{font-size:.94rem;margin:1px 0 5px}.vital{margin-bottom:5px;padding:6px 10px}.vital-top{gap:7px;font-size:1.02rem}.meter{height:12px;margin-top:5px}.stat{padding:5px 9px;font-size:.87rem}.quest{margin-top:6px;padding:7px 9px;font-size:.85rem}.quest p{margin-top:2px}.quest-progress{margin-top:4px;height:5px}.footer-note{position:fixed;left:0;right:0;bottom:9px;margin:0;z-index:2;pointer-events:none}div[data-testid="stButton"] button{padding:6px;font-size:.85rem}
     @media(max-width:820px){.title{min-width:0;width:82%;font-size:1.55rem}.character-stage{height:420px}.stats{grid-template-columns:1fr}.stat:nth-child(odd){border-right:0}.jp-inner{padding:12px}.block-container{padding-top:2rem}}
     </style>
     """,
