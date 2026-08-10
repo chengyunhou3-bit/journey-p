@@ -3,73 +3,72 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#172217">
   <title>Journey P｜角色主頁</title>
-  <meta name="description" content="把任務與個人成長化為一場看得見的冒險。">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&family=Silkscreen:wght@400;700&display=swap');
-    :root{--wood:#6c3e1d;--wood-dark:#2b170b;--gold:#b98a3e;--ink:#292116;--paper:#d8c49e;--green:#173923;--cream:#f0e2c2}
-    *{box-sizing:border-box}html,body{margin:0;height:100%;overflow:hidden}body{display:grid;place-items:center;padding:20px;background:radial-gradient(circle at 50% 20%,#34402c,#10130f 72%);color:var(--cream);font-family:'Noto Serif TC','Microsoft JhengHei',serif}
-    body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.1;background-image:linear-gradient(#fff2 1px,transparent 1px),linear-gradient(90deg,#fff1 1px,transparent 1px);background-size:4px 4px}
-    .layout{width:min(1180px,calc(100vw - 40px));height:min(720px,calc(100vh - 40px));display:grid;grid-template-columns:130px minmax(0,1fr);gap:14px;padding:14px;border:5px solid #3a210e;outline:3px solid #a16d31;border-radius:6px;background:repeating-linear-gradient(88deg,#6e3f1d 0,#7f4b23 8px,#5c3217 15px,#76431f 23px);box-shadow:inset 0 0 0 4px #b27738,inset 0 0 28px #241106,0 22px 70px #000}
-    .wood-menu{align-self:center;display:flex;flex-direction:column;gap:10px;padding:22px 8px 12px;border:3px solid #3a210e;outline:2px solid #9b642b;border-radius:4px;background:repeating-linear-gradient(88deg,#6e3f1d 0,#7f4b23 7px,#5c3217 13px,#76431f 20px);box-shadow:inset 0 0 0 3px #b27738,inset 0 0 18px #241106;position:relative}.wood-menu:before{content:"";position:absolute;left:12px;right:12px;top:-10px;height:17px;border:2px solid #40240f;background:linear-gradient(#b27a39,#633617);box-shadow:inset 0 0 0 2px #d09a52}.wood-slot{position:relative;min-height:43px;padding:4px 5px 4px 14px;border:2px solid #38200e;border-radius:3px;background:radial-gradient(circle at 45% 42%,#392313,#1b120c 72%);box-shadow:inset 0 0 0 2px #8b592b,inset 0 0 10px #000,0 2px 3px #2b1509;color:#e8cc94;font:700 .75rem/1.2 inherit;letter-spacing:.03em;text-shadow:1px 2px #000;white-space:nowrap;cursor:pointer}.wood-slot:before{content:"";position:absolute;left:7px;top:50%;width:5px;height:5px;border:1px solid #b68446;transform:translateY(-50%) rotate(45deg)}.wood-slot:hover,.wood-slot:focus-visible{color:#fff0c9;border-color:#d09a52;outline:1px solid #f0bd69;filter:brightness(1.12)}
-    .game{min-width:0;position:relative;display:grid;grid-template-columns:46% 54%;overflow:hidden;border:5px solid #4a2b12;outline:3px solid #a37232;background:#171912;box-shadow:0 0 0 4px #241409,inset 0 0 0 3px #c08a40,0 12px 30px #000}
-    .game-header{position:absolute;z-index:8;left:17px;right:17px;top:14px;height:55px;display:flex;align-items:center;justify-content:center;pointer-events:none}.page-title{min-width:280px;padding:8px 30px 10px;text-align:center;border:3px solid #9c7135;outline:2px solid #182016;background:linear-gradient(#25482e,#152d1d);box-shadow:inset 0 0 0 2px #4d6f45,0 4px 9px #000a;color:#efe2c2;font-size:1.65rem;font-weight:900;letter-spacing:.2em;text-shadow:2px 2px #000}.clock{position:absolute;right:0;padding:7px 10px;border:2px solid #9c7135;background:#101a15;color:#efd477;font:700 .75rem/1 'Silkscreen',monospace;letter-spacing:.04em;box-shadow:inset 0 0 0 2px #314a36,2px 3px #000}
-    .scene{position:relative;min-width:0;border-right:4px solid #6d4a25;background:#1a2118}.scene>img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;image-rendering:pixelated}.scene:after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 32px #0009}.identity{position:absolute;z-index:4;left:16px;right:16px;bottom:58px;padding:9px 12px;border:2px solid #826b35;outline:2px solid #172114;background:#13291be8;box-shadow:inset 0 0 0 2px #3e5b35,0 3px 10px #000}.name-row{display:flex;align-items:center;gap:8px}.name{font-size:1.3rem;font-weight:900;color:#f0dfbd;cursor:pointer;text-shadow:2px 2px #000}.edit-name{margin-left:auto;width:28px;height:27px;border:1px solid #8d713b;background:#1d2b1e;color:#e3c681;cursor:pointer}.name-input{width:150px;border:0;border-bottom:2px solid #d0a353;outline:0;background:#0c130e;color:#f0dfbd;font:900 1.1rem inherit;padding:1px 4px}.mood{margin-top:2px;color:#c7b994;font-size:.8rem}.hidden{display:none!important}
-    .sheet{min-width:0;padding:82px 18px 58px;background:linear-gradient(100deg,#e3d2ae,#cdb58a);color:var(--ink);box-shadow:inset 12px 0 20px #6d543629;display:flex;flex-direction:column;gap:10px}.ribbon{position:relative;align-self:center;min-width:58%;padding:6px 24px;text-align:center;color:#f0e3c3;font-weight:900;font-size:1rem;letter-spacing:.12em;background:linear-gradient(#285033,#16351f);border:2px solid #8c7440;outline:1px solid #17301d;box-shadow:inset 0 0 0 2px #476139,2px 3px #0006}.ribbon:before,.ribbon:after{content:"◆";position:absolute;top:50%;transform:translateY(-50%);color:#d5ad58;font-size:.65rem}.ribbon:before{left:8px}.ribbon:after{right:8px}
-    .profession{display:grid;grid-template-columns:1fr auto;align-items:end;gap:10px;padding:1px 7px 8px;border-bottom:2px solid #aa946d}.profession h2{margin:0;font-size:1.45rem}.profession-meta{display:flex;gap:10px;align-items:center;font:700 .75rem 'Silkscreen',monospace;color:#71541d}.coin{display:inline-grid;place-items:center;width:20px;height:20px;border:2px solid #6e5118;border-radius:50%;background:#c99b27;color:#fff0a3;font-size:.55rem;box-shadow:inset 0 0 0 2px #f0cb58}
-    .exp-row{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;font:700 .9rem 'Silkscreen',monospace}.track{height:15px;padding:2px;border:2px solid #72582f;outline:1px solid #231b11;background:#17140e;box-shadow:inset 0 0 5px #000}.fill{display:block;height:100%;background:repeating-linear-gradient(90deg,#8ab34d 0 9px,#668d38 9px 12px);box-shadow:inset 0 2px #c6df78}.section-label{width:max-content;margin-top:1px;padding:4px 22px;color:#f0e3c3;background:#1d4329;border:2px solid #816d3c;box-shadow:inset 0 0 0 1px #4d6945;font-weight:900;letter-spacing:.1em}
-    .attributes{display:grid;gap:6px}.attribute{display:grid;grid-template-columns:24px 46px 1fr auto;grid-template-rows:auto 11px;column-gap:7px;align-items:center;padding:5px 8px;border-bottom:1px solid #b19a73}.attribute-icon{grid-row:1;width:22px;height:22px;display:grid;place-items:center;font-size:1.05rem}.attribute-name{font-weight:900}.attribute-value{font:700 .7rem 'Silkscreen',monospace;color:#634b1e}.attribute .track{grid-column:1/-1;grid-row:2;height:10px}.hp-fill{width:80%;background:linear-gradient(#ed666c,#ba3442)}.focus-fill{width:72%;background:linear-gradient(#5e9bea,#3264bd)}.spirit-fill{width:64%;background:linear-gradient(#e7c64b,#b48b20)}
-    .skills{display:grid;grid-template-columns:1fr 1fr;gap:7px}.skill{display:grid;grid-template-columns:34px 1fr auto;gap:7px;align-items:center;min-width:0;padding:7px;border:1px solid #b39b73;background:#d9c39b66}.skill-icon{width:32px;height:32px;display:grid;place-items:center;border:2px solid #75603f;background:#f0dfb8;font-size:1.15rem}.skill strong{display:block;font-size:.86rem}.skill small{display:block;color:#5b4b37;font-size:.66rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.skill-level{font:700 .62rem 'Silkscreen',monospace}
-    .hud{grid-column:1/-1;position:absolute;z-index:6;left:12px;right:12px;bottom:9px;height:42px;display:grid;grid-template-columns:repeat(4,1fr);align-items:center;gap:8px;padding:6px 13px;border:2px solid #826b35;outline:2px solid #172114;background:linear-gradient(#18351f,#0f2417);box-shadow:inset 0 0 0 2px #405a2e,0 -3px 12px #0009;color:#ebddbb}.hud-item{display:flex;align-items:center;justify-content:center;gap:7px;font:700 .68rem 'Silkscreen',monospace;white-space:nowrap}.hud-item i{font-style:normal;font-size:1.15rem}.hud-track{width:70px;height:10px;padding:1px;border:1px solid #8e753e;background:#090c09}.hud-track span{display:block;width:15%;height:100%;background:#86a64a}.toast{position:fixed;z-index:20;left:50%;bottom:13px;transform:translate(-50%,20px);padding:9px 16px;border:2px solid #b58945;background:#17291b;color:#f1dfb8;opacity:0;pointer-events:none;transition:.2s}.toast.show{opacity:1;transform:translate(-50%,0)}
-    /* Layout matched to the supplied character-sheet reference. */
-    .game{grid-template-columns:54% 46%}.game-header{justify-content:flex-start}.page-title{width:calc(54% - 14px);min-width:0;padding:8px 20px 10px}.clock{right:0}.scene{border-right:4px solid #6d4a25}.scene>img{object-position:center 44%}.identity{left:18px;right:auto;top:82px;bottom:auto;width:205px;padding:7px 10px;background:#13291bdc}.name{font-size:1.08rem}.mood{font-size:.68rem}
-    .equipment{position:absolute;z-index:5;left:10px;right:10px;bottom:55px;height:116px;padding:28px 8px 7px;display:grid;grid-template-columns:repeat(6,1fr);gap:5px;border:3px solid #8f7040;outline:2px solid #302314;background:linear-gradient(#dcc8a0,#c9ae7d);box-shadow:inset 0 0 0 2px #eadabb,0 -3px 10px #0008;color:#2b2318}.equipment-label{position:absolute;left:-2px;top:-16px;padding:5px 22px;color:#efe2c1;background:#1a3d25;border:2px solid #89723c;box-shadow:inset 0 0 0 1px #4e6844;font-weight:900;letter-spacing:.12em}.gear{min-width:0;display:grid;grid-template-rows:1fr auto;place-items:center;border:2px solid #a99168;background:#d5bf95;box-shadow:inset 0 0 0 2px #e7d5b3}.gear-icon{font-size:1.55rem}.gear small{width:100%;padding:2px;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:700;font-size:.62rem}
-    .sheet{padding:79px 17px 58px;gap:6px;background:linear-gradient(100deg,#e4d4b1,#cdb58a)}.ribbon{min-width:68%;padding:5px 24px}.profession{display:block;padding:3px 7px 8px;text-align:center}.profession h2{font-size:1.5rem}.profession-meta{position:absolute;right:24px;top:126px}.exp-row{padding:0 9px 8px;border-bottom:2px solid #ad956e}.section-label{margin-top:4px;padding:4px 24px}.attributes{display:grid;gap:0;padding:2px 10px 4px;border:2px solid #b49b73}.attribute{grid-template-columns:26px 1fr auto;grid-template-rows:auto;padding:6px 4px;border-bottom:1px solid #b19a73}.attribute:last-child{border-bottom:0}.attribute-icon{grid-row:auto}.attribute-value{font-size:.76rem}.attribute .track{display:none}.skills{grid-template-columns:1fr;gap:0;padding:2px 10px;border:2px solid #b49b73}.skill{grid-template-columns:36px 1fr auto;padding:6px 3px;border:0;border-bottom:1px solid #b19a73;background:transparent}.skill:last-child{border-bottom:0}.skill-icon{border:0;background:transparent;font-size:1.25rem}.skill strong{font-size:.82rem}.skill small{font-size:.62rem}.skill-level{font-size:.58rem}
-    @media(max-width:980px){.layout{grid-template-columns:1fr;width:calc(100vw - 24px)}.wood-menu{display:none}.game{grid-template-columns:44% 56%}.skills{grid-template-columns:1fr}.skill:nth-child(n+3){display:none}.page-title{min-width:230px;font-size:1.25rem}.clock{font-size:.6rem}.sheet{padding-left:12px;padding-right:12px}}
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&display=swap');
+    :root{--green:#17351f;--gold:#a57b38;--ink:#251d13;--paper:#ddc9a2;--line:#ad9670}
+    *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#11130f}body{display:grid;place-items:center;padding:12px;color:var(--ink);font-family:'Noto Serif TC','Microsoft JhengHei',serif}
+    .frame{position:relative;width:min(1370px,calc(100vw - 24px));aspect-ratio:1.245;max-height:calc(100vh - 24px);border:8px solid #3b250f;outline:4px solid #9c7034;background:#322314;box-shadow:inset 0 0 0 3px #c0944f,0 18px 65px #000;overflow:hidden}
+    .book{position:absolute;inset:14px 14px 68px;display:grid;grid-template-columns:54% 46%;border:4px solid #3c2d19;box-shadow:0 0 0 3px #91703a,inset 0 0 22px #0008}
+    .scene{position:relative;min-width:0;overflow:hidden;border-right:5px solid #70532c;background:#182016}
+    .scene>img{width:100%;height:100%;display:block;object-fit:cover;object-position:center 47%;image-rendering:pixelated;filter:saturate(.9) sepia(.08)}
+    .scene:after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 34px #0009}
+    .title{position:absolute;z-index:3;left:0;top:0;width:73%;height:82px;display:grid;place-items:center;border:4px solid #71572f;border-top:0;background:linear-gradient(#284b31,#15321e);box-shadow:inset 0 0 0 3px #496441,4px 5px 10px #0008;color:#f0e3c7;font-size:2.45rem;font-weight:900;letter-spacing:.15em;text-shadow:2px 3px #000}.title:before,.title:after{content:"❧";position:absolute;color:#aeb46d;font-size:1.4rem}.title:before{left:11%}.title:after{right:11%;transform:scaleX(-1)}
+    .equipment{position:absolute;z-index:3;left:0;right:0;bottom:0;height:165px;padding:36px 13px 10px;display:grid;grid-template-columns:repeat(6,1fr);gap:8px;border-top:5px solid #6e542e;background:linear-gradient(#e1cfaa,#c9ae7e);box-shadow:inset 0 0 0 3px #a88958;color:#2b2217}
+    .tag{position:absolute;left:10px;top:-19px;min-width:150px;padding:6px 22px;text-align:center;border:3px solid #856d3c;background:linear-gradient(#21462b,#12321d);box-shadow:inset 0 0 0 2px #4e6946;color:#f1e2bf;font-size:1.2rem;font-weight:900;letter-spacing:.08em}
+    .gear{min-width:0;display:grid;grid-template-rows:1fr auto;place-items:center;border:3px solid #a58e68;background:#d5bd91;box-shadow:inset 0 0 0 2px #e8d7b7}.gear-icon{font-size:2.25rem;filter:drop-shadow(2px 2px 0 #775f38)}.gear-name{width:100%;padding:3px;text-align:center;font-size:.95rem;font-weight:700;white-space:nowrap}.locked{background:#76664f;color:#bca982}.locked .gear-icon{filter:grayscale(1) brightness(.45)}
+    .sheet{min-width:0;padding:30px 30px 20px;background:linear-gradient(100deg,#ead9b7,#d2ba8d);box-shadow:inset 14px 0 24px #61472e2e;color:var(--ink)}
+    .section-ribbon{position:relative;width:78%;margin:0 auto 20px;padding:8px 20px;text-align:center;border:3px solid #826d3b;background:linear-gradient(#285033,#15351f);box-shadow:inset 0 0 0 2px #4b6744;color:#f2e4c7;font-size:1.2rem;font-weight:900;letter-spacing:.12em}
+    .profession{text-align:center;padding:0 12px 18px;border-bottom:3px solid #ab936b}.profession h1{margin:0 0 16px;font-size:2.25rem;letter-spacing:.06em}.exp{display:grid;grid-template-columns:auto 1fr auto;gap:15px;align-items:center;font-size:1.15rem;font-weight:700}.bar{height:22px;padding:3px;border:3px solid #55401f;background:#17140f;box-shadow:inset 0 0 5px #000}.bar span{display:block;height:100%;background:linear-gradient(#b7d46a,#6f9b39);box-shadow:inset 0 2px #ddec91}
+    .section{position:relative;margin-top:42px;padding:30px 26px 12px;border:3px solid #b39a70;box-shadow:inset 0 0 0 1px #ead9b7}.section>.tag{top:-24px;left:-2px;min-width:170px}.row{display:grid;grid-template-columns:42px 1fr auto;align-items:center;min-height:55px;border-bottom:2px solid #c2aa82;font-size:1.22rem}.row:last-child{border-bottom:0}.icon{font-size:1.65rem}.value{font-size:1.2rem;font-weight:700}.skill{grid-template-columns:52px 1fr auto;min-height:71px}.skill strong{display:block;font-size:1.15rem}.skill small{display:block;margin-top:2px;font-size:.88rem}.level{align-self:start;padding-top:10px;font-size:1rem;font-weight:700}
+    .hud{position:absolute;left:14px;right:14px;bottom:10px;height:54px;display:grid;grid-template-columns:1fr 1fr .8fr 1.6fr;align-items:center;border:3px solid #7d6332;background:linear-gradient(#183820,#102817);box-shadow:inset 0 0 0 2px #405b35;color:#eee0bd}.hud-item{display:flex;justify-content:center;align-items:center;gap:13px;font-size:1.15rem;white-space:nowrap}.hud-icon{font-size:1.7rem}.hud .bar{width:150px;height:16px;padding:2px;border-width:2px}
+    @media(max-width:900px){body{overflow:auto}.frame{width:100%;max-height:none;aspect-ratio:auto;height:1050px}.book{grid-template-columns:1fr;grid-template-rows:52% 48%;bottom:64px}.scene{border-right:0;border-bottom:5px solid #70532c}.sheet{padding:22px}.title{height:64px;font-size:1.65rem}.equipment{height:132px;padding-top:30px}.gear-icon{font-size:1.7rem}.profession h1{font-size:1.65rem}.section{margin-top:34px}.skills-section .row:nth-child(n+4){display:none}.hud{grid-template-columns:repeat(3,1fr)}.hud-item:last-child{display:none}}
   </style>
 </head>
 <body>
-  <div class="layout">
-    <aside class="wood-menu" aria-label="主要選單">
-      <button class="wood-slot">QUEST</button><button class="wood-slot">SKILLS</button><button class="wood-slot">信仰&amp;真實</button><button class="wood-slot">角色日誌</button><button class="wood-slot">查看信箱</button>
-    </aside>
-    <main class="game">
-      <header class="game-header"><div class="page-title">角色主頁</div><time class="clock" id="clock">00:00:00</time></header>
-      <section class="scene" aria-label="角色場景">
-        <img src="static/office-adventurer.png" alt="在奇幻書房工作的像素風精靈冒險者">
-        <div class="identity"><div class="name-row"><span class="name" id="name" tabindex="0">亞倫</span><input id="name-input" class="name-input hidden" maxlength="12" aria-label="角色名字"><button id="edit-name" class="edit-name" aria-label="修改角色名字">✎</button></div><div class="mood">今天也在現實世界累積經驗。</div></div>
-        <div class="equipment" aria-label="角色裝備"><div class="equipment-label">✦ 裝備</div><div class="gear"><span class="gear-icon">🧢</span><small>精靈帽</small></div><div class="gear"><span class="gear-icon">🧥</span><small>綠葉披風</small></div><div class="gear"><span class="gear-icon">👓</span><small>眼鏡</small></div><div class="gear"><span class="gear-icon">🏅</span><small>打工證</small></div><div class="gear"><span class="gear-icon">☕</span><small>保溫杯</small></div><div class="gear"><span class="gear-icon">🔒</span><small>未解鎖</small></div></div>
+  <main class="frame">
+    <div class="book">
+      <section class="scene" aria-label="角色工作場景">
+        <img src="static/office-adventurer.png" alt="在溫暖書房工作的精靈角色">
+        <div class="title">角色主頁</div>
+        <div class="equipment">
+          <div class="tag">✦ 裝備</div>
+          <div class="gear"><span class="gear-icon">🧢</span><span class="gear-name">精靈帽</span></div>
+          <div class="gear"><span class="gear-icon">🧥</span><span class="gear-name">綠葉披風</span></div>
+          <div class="gear"><span class="gear-icon">👓</span><span class="gear-name">眼鏡</span></div>
+          <div class="gear"><span class="gear-icon">🏅</span><span class="gear-name">打工證</span></div>
+          <div class="gear"><span class="gear-icon">☕</span><span class="gear-name">保溫杯</span></div>
+          <div class="gear locked"><span class="gear-icon">🔒</span><span class="gear-name">未解鎖</span></div>
+        </div>
       </section>
       <section class="sheet" aria-label="角色資料">
-        <div class="ribbon">💼 職業</div>
-        <div class="profession"><h2>✦ 初階打工人 Lv.1 ✦</h2><div class="profession-meta"><span><i class="coin">G</i> 150</span></div></div>
-        <div class="exp-row"><span>EXP</span><div class="track"><span class="fill" style="width:15%"></span></div><span>15 / 100</span></div>
-        <div class="section-label">✦ 屬性</div>
-        <div class="attributes">
-          <div class="attribute"><span class="attribute-icon">❤️</span><span class="attribute-name">體力</span><strong class="attribute-value">80 / 100</strong></div>
-          <div class="attribute"><span class="attribute-icon">💡</span><span class="attribute-name">智力</span><strong class="attribute-value">12</strong></div>
-          <div class="attribute"><span class="attribute-icon">💪</span><span class="attribute-name">抗壓</span><strong class="attribute-value">8</strong></div>
-          <div class="attribute"><span class="attribute-icon">🪙</span><span class="attribute-name">薪水</span><strong class="attribute-value">150 G</strong></div>
+        <div class="section-ribbon">💼　職業</div>
+        <div class="profession">
+          <h1>✦ 初階打工人 Lv.1 ✦</h1>
+          <div class="exp"><span>EXP</span><div class="bar"><span style="width:15%"></span></div><span>15 / 100</span></div>
         </div>
-        <div class="section-label">✦ 技能</div>
-        <div class="skills">
-          <div class="skill"><span class="skill-icon">📊</span><div><strong>Excel 入門</strong><small>數據處理效率 +5%</small></div><span class="skill-level">Lv.1</span></div>
-          <div class="skill"><span class="skill-icon">✉️</span><div><strong>郵件回覆</strong><small>回覆壓力 -5</small></div><span class="skill-level">Lv.1</span></div>
-          <div class="skill"><span class="skill-icon">☕</span><div><strong>咖啡提神</strong><small>專注力暫時提升</small></div><span class="skill-level">Lv.1</span></div>
-          <div class="skill"><span class="skill-icon">🏃</span><div><strong>下班衝刺</strong><small>下班速度 +10%</small></div><span class="skill-level">Lv.1</span></div>
+        <div class="section">
+          <div class="tag">✦ 屬性</div>
+          <div class="row"><span class="icon">❤️</span><strong>體力</strong><span class="value">80 / 100</span></div>
+          <div class="row"><span class="icon">💡</span><strong>智力</strong><span class="value">12</span></div>
+          <div class="row"><span class="icon">💪</span><strong>抗壓</strong><span class="value">8</span></div>
+          <div class="row"><span class="icon">🪙</span><strong>薪水</strong><span class="value">150 🪙</span></div>
+        </div>
+        <div class="section skills-section">
+          <div class="tag">✦ 技能</div>
+          <div class="row skill"><span class="icon">📊</span><div><strong>Excel 入門</strong><small>提升數據處理效率 +5%</small></div><span class="level">Lv.1</span></div>
+          <div class="row skill"><span class="icon">✉️</span><div><strong>郵件回覆</strong><small>快速回覆郵件，減少壓力 +5</small></div><span class="level">Lv.1</span></div>
+          <div class="row skill"><span class="icon">☕</span><div><strong>咖啡提神</strong><small>短暫提升專注力（冷卻：2小時）</small></div><span class="level">Lv.1</span></div>
+          <div class="row skill"><span class="icon">🏃</span><div><strong>下班衝刺</strong><small>下班速度 +10%</small></div><span class="level">Lv.1</span></div>
         </div>
       </section>
-      <footer class="hud"><div class="hud-item"><i>❤️</i><span>80 / 100</span></div><div class="hud-item"><i>⚡</i><span>64 / 100</span></div><div class="hud-item"><i>🪙</i><span>150</span></div><div class="hud-item"><span>EXP</span><span class="hud-track"><span></span></span><span>15 / 100</span></div></footer>
-    </main>
-  </div>
-  <div class="toast" id="toast" role="status"></div>
-  <script>
-    const clock=document.querySelector('#clock');const tick=()=>{const d=new Date();clock.textContent=[d.getHours(),d.getMinutes(),d.getSeconds()].map(n=>String(n).padStart(2,'0')).join(':')};tick();setInterval(tick,1000);
-    const toast=document.querySelector('#toast');const notify=message=>{toast.textContent=message;toast.classList.add('show');clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>toast.classList.remove('show'),1700)};
-    document.querySelectorAll('.wood-slot').forEach(button=>button.addEventListener('click',()=>notify(`${button.textContent} 功能準備中 ✦`)));
-    const name=document.querySelector('#name'),input=document.querySelector('#name-input'),edit=document.querySelector('#edit-name'),key='journeyP.characterName';try{name.textContent=localStorage.getItem(key)||'亞倫'}catch{}
-    const startEdit=()=>{input.value=name.textContent.trim();name.classList.add('hidden');input.classList.remove('hidden');input.focus();input.select()};const finishEdit=save=>{const value=input.value.trim().slice(0,12);if(save&&value){name.textContent=value;try{localStorage.setItem(key,value)}catch{}notify('角色名字已儲存 ✦')}input.classList.add('hidden');name.classList.remove('hidden')};edit.addEventListener('click',startEdit);name.addEventListener('click',startEdit);name.addEventListener('keydown',event=>{if(event.key==='Enter'){startEdit()}});input.addEventListener('keydown',event=>{if(event.key==='Enter')finishEdit(true);if(event.key==='Escape')finishEdit(false)});input.addEventListener('blur',()=>finishEdit(true));
-  </script>
+    </div>
+    <footer class="hud">
+      <div class="hud-item"><span class="hud-icon">❤️</span><span>80 / 100</span></div>
+      <div class="hud-item"><span class="hud-icon">⚡</span><span>80 / 100</span></div>
+      <div class="hud-item"><span class="hud-icon">🪙</span><span>150</span></div>
+      <div class="hud-item"><span>EXP</span><div class="bar"><span style="width:15%"></span></div><span>15 / 100</span></div>
+    </footer>
+  </main>
 </body>
 </html>
