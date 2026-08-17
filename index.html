@@ -110,13 +110,13 @@
   <script>
     const supabaseClient=window.supabase.createClient('https://aevoxzippmtipliacssb.supabase.co','sb_publishable_w39rFG2ut8KrRgtVaIgJtA_FpXj7rkV',{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:false,flowType:'pkce'}});
     const toast=document.querySelector('.toast');
-    const authorInfoButton=document.createElement(`button`),authorDialog=document.createElement(`dialog`);authorInfoButton.className=`author-info-button`;authorInfoButton.type=`button`;authorInfoButton.textContent=`i`;authorInfoButton.title=`作者的話`;authorInfoButton.setAttribute(`aria-label`,`開啟作者的話`);authorDialog.className=`author-dialog`;authorDialog.innerHTML=`<article class=author-card><button class=author-close type=button aria-label=關閉>×</button><h2>✦ 作者的話 ✦</h2><p class=author-copy></p></article>`;authorDialog.querySelector(`.author-copy`).textContent=`人類是有智慧的，相較於其他動物我們的優勢在於，能夠訂定清晰的目標，有著能夠為了未來放棄眼前快感的能力。不用像動物一樣只依賴生物本能。
+    const authorInfoButton=document.createElement(`button`),authorDialog=document.createElement(`dialog`);authorInfoButton.className=`author-info-button`;authorInfoButton.type=`button`;authorInfoButton.textContent=`i`;authorInfoButton.title=`作者的話`;authorInfoButton.setAttribute(`aria-label`,`開啟作者的話`);authorDialog.className=`author-dialog`;authorDialog.innerHTML=`<article class=author-card><button class=author-close type=button aria-label=關閉>×</button><h2>✦ 作者的話 ✦</h2><p class=author-copy></p></article>`;authorDialog.querySelector(`.author-copy`).textContent=`人類是有智慧的，相較於其他動物，我們的優勢在於，能夠訂定清晰的目標，有著能夠為了未來規劃放棄眼前快感的能力。不用像動物一樣只依賴生物本能。
 
-然而生活上有很多時候，眼前並沒有清晰的提示來提醒自己時刻的目標，即便有事想起來自己有麻煩的事得做，生物本能上腦袋還是欠缺動起來的多巴胺。那並不是你的錯，而是生物本能在搞鬼，想要避免困難的事情。
+然而生活上有很多時候，眼前並沒有清晰的提示來提醒自己時刻的目標，即便想起來自己有麻煩的事得做，生物本能上，腦袋還是會欠缺動起來的多巴胺。那並不是你的錯，而是生物本能在搞鬼。會想要避免困難的事情。
 
-很多人誤以為多巴胺是快樂的元素，其實不然。多巴胺更像一個期待和滿足的快感產生的腦內激素。是你有沒有過這種感覺，為了一個自己夢想的目標，而徹夜未眠的努力。那就是腦子裡清晰目標和獎勵給出來的多巴胺，而多巴胺正是動力（motivation)的原料。
+很多人誤以為多巴胺是快樂的元素，其實不然。多巴胺更像一個期待和滿足的快感產生的腦內激素。你有沒有過這種感覺，為了一個自己夢想的目標，而徹夜未眠的努力，卻一點也不缺乏動力。那就是腦子裡清晰目標和獎勵給出來的多巴胺，而多巴胺正是動力（motivation)的原料。
 
-這個軟體的目標就是幫助使用者清晰的可視化自己的目標，和訂定獎勵。時刻提醒自己，我有什麼事情要做，這是為了什麼目標，完成這個短期目標我可以給自己什麼獎勵，我已經做到過什麼了不起的事情。相信會是一個讓完成任務變簡單的生活小工具！`;document.body.append(authorInfoButton,authorDialog);authorInfoButton.addEventListener(`click`,()=>{if(!authorDialog.open)authorDialog.showModal()});authorDialog.querySelector(`.author-close`).addEventListener(`click`,()=>authorDialog.close());authorDialog.addEventListener(`click`,event=>{if(event.target===authorDialog)authorDialog.close()});
+這個軟體的目標就是幫助使用者清晰的可視化自己的目標和訂定獎勵。時刻提醒自己，我有什麼事情要做，這是為了什麼目標，完成這個短期目標我可以給自己什麼獎勵。知道我已經做到過什麼了不起的事情，這次也將是一塊小蛋糕! 我相信這個軟體會是一個讓完成任務變簡單的生活小工具！`;document.body.append(authorInfoButton,authorDialog);authorInfoButton.addEventListener(`click`,()=>{if(!authorDialog.open)authorDialog.showModal()});authorDialog.querySelector(`.author-close`).addEventListener(`click`,()=>authorDialog.close());authorDialog.addEventListener(`click`,event=>{if(event.target===authorDialog)authorDialog.close()});
     const nameLabel=document.querySelector('#character-name');
     const nameInput=document.querySelector('#character-name-input');
     const editNameButton=document.querySelector('#edit-name');
