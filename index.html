@@ -65,7 +65,7 @@
     /* Fixed game canvas: preserve the desktop composition and scale it as one unit. */
     :root{--app-scale:1}
     body{position:relative;width:100vw;height:100vh;min-width:0;min-height:0;overflow:hidden;padding:0}
-    .app-canvas{position:absolute;left:calc(50% + 77px);top:50%;width:1202px;height:780px;transform:translate(-50%,-50%) scale(var(--app-scale));transform-origin:center}
+    .app-canvas{position:absolute;left:50%;top:50%;width:1202px;height:780px;transform:translate(-50%,-50%) scale(var(--app-scale));transform-origin:center}
     .wood-menu{position:absolute;display:flex;left:12px}
     .shell{position:absolute;left:50%;top:50%;width:870px;height:690px;min-height:0;margin:0;transform:translate(-50%,-50%)}
     .title{min-width:360px;width:auto;font-size:1.95rem}
@@ -77,12 +77,12 @@
     .quest-layout{grid-template-columns:1.15fr .85fr;height:calc(100% - 50px)}
     .quest-view{overflow:hidden}
     .quest-list{max-height:390px}
-    .footer{position:absolute;bottom:32px}
+    .footer{position:absolute;bottom:20px}
   </style>
 </head>
 <body>
   <script>
-    addEventListener(`DOMContentLoaded`,()=>{const appCanvas=document.createElement(`div`);appCanvas.className=`app-canvas`;const menu=document.querySelector(`.wood-menu`),shell=document.querySelector(`.shell`),footer=document.querySelector(`.footer`);document.body.insertBefore(appCanvas,menu);appCanvas.append(menu,shell,footer);const fitGameCanvas=()=>{const scale=Math.min(1,(window.innerWidth-8)/1060,(window.innerHeight-8)/716);document.documentElement.style.setProperty(`--app-scale`,String(Math.max(.55,scale)))};fitGameCanvas();window.addEventListener(`resize`,fitGameCanvas);window.visualViewport?.addEventListener(`resize`,fitGameCanvas)})
+    addEventListener(`DOMContentLoaded`,()=>{const appCanvas=document.createElement(`div`);appCanvas.className=`app-canvas`;const menu=document.querySelector(`.wood-menu`),shell=document.querySelector(`.shell`),footer=document.querySelector(`.footer`);document.body.insertBefore(appCanvas,menu);appCanvas.append(menu,shell,footer);const fitGameCanvas=()=>{const scale=Math.min(1,(window.innerWidth-8)/1060,(window.innerHeight-8)/740);document.documentElement.style.setProperty(`--app-scale`,String(Math.max(.55,scale)))};fitGameCanvas();window.addEventListener(`resize`,fitGameCanvas);window.visualViewport?.addEventListener(`resize`,fitGameCanvas)})
   </script>
   <aside class="wood-menu" aria-label="主要選單"><button class="wood-slot" id="quest-menu" type="button">QUEST</button><button class="wood-slot" type="button">SKILLS</button><button class="wood-slot" type="button">信仰&amp;真實</button><button class="wood-slot" id="journal-menu" type="button">角色日誌</button><button class="wood-slot" id="mail-menu" type="button">查看信箱</button></aside>
   <main class="shell"><div class="inner"><div class="title-wrap"><div class="clock-panel" aria-label="目前時間，24 小時制"><span class="clock-time" id="digital-clock">00:00:00</span></div><div class="title" id="page-title">角色狀態</div></div>
