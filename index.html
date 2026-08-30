@@ -144,7 +144,7 @@
 
 很多人誤以為多巴胺是快樂的元素，其實不然。多巴胺更像一個期待和滿足的快感產生的腦內激素。你有沒有過這種感覺，為了一個自己夢想的目標，而徹夜未眠的努力，卻一點也不缺乏動力。那就是腦子裡清晰目標和獎勵給出來的多巴胺，而多巴胺正是動力（motivation)的原料。
 
-這個軟體的目標就是幫助使用者清晰的可視化自己的目標和訂定獎勵。時刻提醒自己，我有什麼事情要做，這是為了什麼目標，完成這個短期目標我可以給自己什麼獎勵。知道我已經做到過什麼了不起的事情，這次也將是一塊小蛋糕! 我相信這個軟體會是一個讓完成任務變簡單的生活小工具！`;document.body.append(authorInfoButton,cornerCalendarButton,authorDialog);authorInfoButton.addEventListener(`click`,()=>{if(!authorDialog.open)authorDialog.showModal()});cornerCalendarButton.addEventListener(`click`,()=>showToast(`日曆功能準備中 ✦`));authorDialog.querySelector(`.author-close`).addEventListener(`click`,()=>authorDialog.close());authorDialog.addEventListener(`click`,event=>{if(event.target===authorDialog)authorDialog.close()});
+這個軟體的目標就是幫助使用者清晰的可視化自己的目標和訂定獎勵。時刻提醒自己，我有什麼事情要做，這是為了什麼目標，完成這個短期目標我可以給自己什麼獎勵。知道我已經做到過什麼了不起的事情，這次也將是一塊小蛋糕! 我相信這個軟體會是一個讓完成任務變簡單的生活小工具！`;document.body.append(authorInfoButton,cornerCalendarButton,authorDialog);authorInfoButton.addEventListener(`click`,()=>{if(!authorDialog.open)authorDialog.showModal()});cornerCalendarButton.addEventListener(`click`,()=>{location.href=`calendar.html`});authorDialog.querySelector(`.author-close`).addEventListener(`click`,()=>authorDialog.close());authorDialog.addEventListener(`click`,event=>{if(event.target===authorDialog)authorDialog.close()});
     const nameLabel=document.querySelector('#character-name');
     const nameInput=document.querySelector('#character-name-input');
     const editNameButton=document.querySelector('#edit-name');
